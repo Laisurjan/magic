@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>未來魔法使圖鑑｜花商魔法適性小測驗</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="theme-color" content="#6366f1" />
+  <meta
+    name="description"
+    content="不看成績，用 12 種「異世界魔法學派」，幫你偷看自己其實擅長哪一種魔法，在未來的世界探險大放異彩。"
+  />
+  <meta property="og:title" content="測測你是什麼魔法系的未來白領？" />
+  <meta property="og:description" content="花商魔法適性小測驗：12 種魔法學派，看你比較像哪一種未來魔法使。" />
+  <meta property="og:image" content="https://www.hlbh.hlc.edu.tw/ischool/resources/WID_0_2_0561cd35e41257124f57c1529188099684347712/logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #6366f1;
+      --primary-light: #818cf8;
+      --accent: #10b981;
+      --accent-pop: #fbbf24;
+      --clash: #f43f5e;
+      --dark: #1e293b;
+      --text-gray: #475569;
+      --light: #f8fafc;
+      --glass: rgba(255, 255, 255, 0.85);
+      --glass-border: rgba(255, 255, 255, 0.8);
+    }
+
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html, body { margin: 0; padding: 0; width: 100%; height: 100%; }
+
+    body {
+      font-family: 'Noto Sans TC', system-ui, -apple-system, sans-serif;
+      background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a18cd1, #fbc2eb);
+      background-size: 400% 400%;
+      animation: gradientBG 12s ease infinite;
+      color: var(--dark);
+      display: flex;
+      justify-content: center;
+      padding: 20px 16px;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .page-container {
+      width: 100%;
+      max-width: 480px;
+      position: relative;
+      z-index: 10;
+      padding-bottom: 40px;
+    }
+
+    .glass-card {
+      background: var(--glass);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 2px solid var(--glass-border);
+      border-radius: 28px;
+      box-shadow: 0 10px 40px -10px rgba(0,0,0,0.1);
+      padding: 24px 20px;
+      margin-bottom: 24px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .hero-section { text-align: center; padding-top: 20px; }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--dark);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 99px;
+      margin-bottom: 16px;
+      letter-spacing: 1px;
+    }
+
+    .hero-title {
+      font-size: 2.4rem;
+      font-weight: 900;
+      margin: 0 0 16px;
+      line-height: 1.2;
+      background: linear-gradient(135deg, #2563eb, #db2777);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-desc {
+      font-size: 1rem;
+      color: var(--text-gray);
+      line-height: 1.6;
+      margin-bottom: 24px;
+      font-weight: 500;
+    }
+
+    .shape-icons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      font-size: 2rem;
+      margin-bottom: 24px;
+      filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+    }
+    .shape-icons span { animation: float 3s ease-in-out infinite; }
+    .shape-icons span:nth-child(2) { animation-delay: 0.2s; }
+    .shape-icons span:nth-child(3) { animation-delay: 0.4s; }
+    .shape-icons span:nth-child(4) { animation-delay: 0.6s; }
+    .shape-icons span:nth-child(5) { animation-delay: 0.8s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .btn-action {
+      background: var(--dark);
+      color: #fff;
+      border: none;
+      width: 100%;
+      padding: 18px;
+      border-radius: 20px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: transform 0.1s;
+      box-shadow: 0 8px 20px -5px rgba(30, 41, 59, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .btn-action:active { transform: scale(0.96); }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.5);
+      color: var(--dark);
+      border: 2px solid #cbd5e1;
+      padding: 12px 24px;
+      font-size: 0.95rem;
+      border-radius: 99px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .progress-container { margin-bottom: 20px; }
+    .progress-text {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: #94a3b8;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+    .progress-track {
+      height: 10px;
+      background: #e2e8f0;
+      border-radius: 99px;
+      overflow: hidden;
+    }
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #6366f1, #f43f5e);
+      width: 0%;
+      transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .question-card { display: none; }
+    .question-card.active { display: block; animation: fadeIn 0.4s ease-out; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .q-number {
+      font-size: 0.85rem;
+      font-weight: 900;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 8px;
+    }
+
+    .q-text {
+      font-size: 1.3rem;
+      font-weight: 800;
+      line-height: 1.4;
+      margin: 0 0 20px;
+      color: var(--dark);
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .option-item { position: relative; }
+    .option-item input {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .option-content {
+      display: flex;
+      align-items: center;
+      padding: 14px 16px;
+      background: rgba(255,255,255,0.6);
+      border: 2px solid transparent;
+      border-radius: 16px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #334155;
+      cursor: pointer;
+      transition: all 0.2s;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .option-item input:checked + .option-content {
+      border-color: var(--primary);
+      background: #e0e7ff;
+      color: var(--primary);
+      font-weight: 700;
+      box-shadow: 0 8px 20px rgba(99, 102, 241, 0.25);
+      transform: scale(1.02);
+    }
+
+    .result-frame {
+      display: none;
+      background: #fff;
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+      position: relative;
+      border: 4px solid #fff;
+    }
+
+    .screenshot-mode .result-frame {
+      border-radius: 0;
+      box-shadow: none;
+      max-width: 100%;
+    }
+    .screenshot-mode body { background: #fff; align-items: flex-start; }
+    .screenshot-mode .page-container { max-width: 100%; padding: 0; }
+    .screenshot-mode .hide-on-shot { display: none !important; }
+
+    .result-header {
+      background: var(--dark);
+      padding: 40px 20px 30px;
+      color: #fff;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .result-header::before {
+      content: "";
+      position: absolute;
+      top: -50%; left: -50%; width: 200%; height: 200%;
+      background: conic-gradient(from 0deg, transparent 0deg, rgba(99, 102, 241, 0.3) 120deg, transparent 360deg);
+      animation: spin 8s linear infinite;
+    }
+    @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+    .res-emoji {
+      font-size: 5rem;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 2;
+      filter: drop-shadow(0 0 20px rgba(255,255,255,0.4));
+      animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    @keyframes popIn { from { transform: scale(0); } to { transform: scale(1); } }
+
+    .res-title {
+      font-size: 1.9rem;
+      font-weight: 900;
+      margin: 0 0 8px;
+      position: relative;
+      z-index: 2;
+      color: #fff;
+    }
+
+    .res-tag {
+      display: inline-block;
+      padding: 6px 14px;
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(4px);
+      border-radius: 99px;
+      font-size: 0.9rem;
+      position: relative;
+      z-index: 2;
+      color: #fff;
+      font-weight: 500;
+    }
+
+    .result-body { padding: 30px 24px; }
+
+    .res-quote {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin: 0 0 24px;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    .trait-box {
+      background: #f8fafc;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 24px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .trait-title {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      font-weight: 800;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .trait-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .trait-list li {
+      position: relative;
+      padding-left: 24px;
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+      color: #475569;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+    .trait-list li::before {
+      content: "✦";
+      position: absolute;
+      left: 0; top: 2px;
+      color: var(--accent-pop);
+      font-size: 1rem;
+    }
+
+    .relation-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 20px;
+      margin-top: 4px;
+    }
+    .relation-card {
+      padding: 12px;
+      border-radius: 12px;
+      text-align: center;
+    }
+    .relation-card.good { background: #ecfdf5; border: 1px solid #d1fae5; }
+    .relation-card.bad { background: #fef2f2; border: 1px solid #fee2e2; }
+    .rel-icon { font-size: 1.5rem; display: block; margin-bottom: 4px; }
+    .rel-label { font-size: 0.75rem; color: #64748b; display: block; }
+    .rel-name { font-size: 0.9rem; font-weight: 700; color: var(--dark); }
+
+    .school-tips {
+      margin-top: 10px;
+      padding: 20px;
+      background: linear-gradient(135deg, #fffbeb, #fef3c7);
+      border-radius: 16px;
+      position: relative;
+      overflow: hidden;
+      border-left: 4px solid #f59e0b;
+    }
+    .school-tips::after {
+      content: "HLBH";
+      position: absolute;
+      right: -10px; bottom: -15px;
+      font-size: 4rem;
+      font-weight: 900;
+      color: rgba(245, 158, 11, 0.1);
+      z-index: 0;
+    }
+
+    .tips-title {
+      font-size: 0.9rem;
+      font-weight: 900;
+      color: #b45309;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      position: relative;
+      z-index: 1;
+    }
+    .tips-text {
+      font-size: 0.95rem;
+      color: #78350f;
+      line-height: 1.5;
+      position: relative;
+      z-index: 1;
+      font-weight: 500;
+    }
+
+    .result-actions { margin-top: 30px; display: flex; flex-direction: column; gap: 16px; }
+
+    .link-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 4px;
+    }
+    .btn-link {
+      text-decoration: none;
+      background: #fff;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+      padding: 12px;
+      border-radius: 16px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+    .btn-link:hover { background: var(--primary); color: #fff; }
+    .btn-link.fb { color: #1877F2; border-color: #1877F2; }
+    .btn-link.fb:hover { background: #1877F2; color: #fff; }
+
+    .footer-brand {
+      margin-top: 40px;
+      text-align: center;
+      padding-top: 20px;
+      border-top: 2px dashed rgba(255,255,255,0.4);
+    }
+    .brand-logo {
+      font-weight: 900;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      color: #fff;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 30px; left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: var(--clash);
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 99px;
+      font-weight: 700;
+      box-shadow: 0 10px 30px rgba(244, 63, 94, 0.4);
+      opacity: 0;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      z-index: 100;
+      white-space: nowrap;
+      font-size: 0.9rem;
+    }
+    .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+  </style>
+</head>
+<body>
+
+  <div style="position:fixed; top:-10%; right:-10%; width:60%; height:60%; background:radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%); border-radius:50%; filter:blur(60px); pointer-events:none; z-index:1;"></div>
+
+  <div class="page-container" id="pageContainer">
+    
+    <!-- HERO -->
+    <section class="glass-card hero-section" id="heroCard">
+      <span class="hero-badge">花商潛力解碼 · 異世界魔法設定集</span>
+      <h1 class="hero-title">測測你是哪種<br>未來的魔法使？</h1>
+      <div class="shape-icons">
+        <span>📜</span><span>🎨</span><span>🌐</span><span>🧭</span><span>🔮</span>
+      </div>
+      <p class="hero-desc">
+        這不是升學測驗，只是偷偷看一眼：<br>
+        如果把日常生活當成魔法修行，你可能比較擅長哪一系？<br>
+        12 種異世界魔法學派，選直覺就好。
+      </p>
+      <button class="btn-action" id="startBtn">
+        開始小測驗 <span>✨</span>
+      </button>
+      <div style="margin-top: 12px; font-size: 0.75rem; opacity: 0.6;">
+        約 2 分鐘完成 · 推薦手機直式遊玩
+      </div>
+    </section>
+
+    <!-- QUIZ -->
+    <section class="glass-card" id="quizCard" style="display:none;">
+      <div class="progress-container">
+        <div class="progress-text">
+          <span>PROGRESS</span>
+          <span id="stepText">1 / 12</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-bar" id="progressFill"></div>
+        </div>
+      </div>
+
+      <form id="quizForm">
+        <!-- Q1 -->
+        <div class="question-card active" data-q="1">
+          <div class="q-number">Question 01</div>
+          <h3 class="q-text">分組報告大家一片安靜，你通常會「下意識」先做什麼？</h3>
+          <div class="options-grid">
+            <label class="option-item">
+              <input type="radio" name="q1" value="aurora">
+              <div class="option-content">打開簡報，先把版面和配色調到自己看得順眼。</div>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="q1" value="ledger">
+              <div class="option-content">拿出紙或開備忘錄，列一下要做哪幾件事、誰負責什麼。</div>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="q1" value="nexus">
+              <div class="option-content">先問一句：「大家比較想做什麼？」試著讓人開口。</div>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="q1" value="anchor">
+              <div class="option-content">默默把檔案整理好、群組開好，等大家丟東西進來。</div>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="q1" value="abyss">
+              <div class="option-content">先觀察一圈，心想再等等看，有人講話我再跟上。</div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question-card" data-q="2">
+          <div class="q-number">Question 02</div>
+          <h3 class="q-text">如果突然多出一個悠閒下午，你最有可能怎麼用？</h3>
+          <div class="options-grid">
+            <label class="option-item">
+              <input type="radio" name="q2" value="aurora">
+              <div class="option-content">剪一支小影片、修幾張圖，發個限動等讚數慢慢跳。</div>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="q2" value="cipher">
+              <div class="option-content">研究一個一直想懂的東西，例如某個軟體、程式或資料表。</div>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="q2" value="carnival">
+              <div class="option-content">約朋友出來亂晃，邊走邊決定要吃什麼、玩什麼。</div>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="q2" value="horizon">
+              <div class="option-content">查查別的城市、學校或國家的生活，幻想以後要去哪裡。</div>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="q2" value="abyss">
+              <div class="option-content">什麼都不想排，配耳機、躺著滑手機，讓時間隨便流過去。</div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="question-card" data-q="3">
+          <div class="q-number">Question 03</div>
+          <h3 class="q-text">遇到超難的題目或任務卡關，你腦中的第一個念頭是？</h3>
+          <div class="options-grid">
+            <label class="option-item">
+              <input type="radio" name="q3" value="cipher">
+              <div class="option-content">「太亂了，我需要把步驟拆開，畫個圖或表格看看。」</div>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="q3" value="scribe">
+              <div class="option-content">「有沒有誰可以用『人話版本』講一次，我就會了。」</div>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="q3" value="oracle">
+              <div class="option-content">「先看清楚狀況，搞懂卡住的點到底是什麼再動。」</div>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="q3" value="solace">
+              <div class="option-content">「算了，先去喝個水、休息一下，不想在崩潰狀態硬撐。」</div>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="q3" value="carnival">
+              <div class="option-content">「等一下再說，先去看一點廢片讓腦袋重開機。」</div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="question-card" data-q="4">
+          <div class="q-number">Question 04</div>
+          <h3 class="q-text">以下哪一句誇獎，會讓你暗爽最久？</h3>
+          <div class="options-grid">
+            <label class="option-item">
+              <input type="radio" name="q4" value="aurora">
+              <div class="option-content">「你的美感真的很強耶，作品看起來超有質感。」</div>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="q4" value="ledger">
+              <div class="option-content">「還好有你記得細節，不然這次一定大爆炸。」</div>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="q4" value="scribe">
+              <div class="option-content">「你講話很有畫面，聽你講什麼都不會無聊。」</div>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="q4" value="nexus">
+              <div class="option-content">「跟你同一組很舒服，大家都比較願意合作。」</div>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="q4" value="abyss">
+              <div class="option-content">「你看起來很安靜，可是其實超有實力。」</div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="question-card" data-q="5">
+          <div class="q-number">Question 05</div>
+          <h3 class="q-text">如果未來有一份「剛好可以先試試看」的工作，你希望長什麼樣子？</h3>
+          <div class="options-grid">
+            <label class="option-item">
+              <input type="radio" name="q5" value="atelier">
+              <div class="option-content">可以一起設計活動、展場或體驗，讓別人覺得「好好玩」。</div>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="q5" value="cipher">
+              <div class="option-content">會碰到資料、報表或系統，讓我有機會把東西弄懂弄順。</div>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="q5" value="scribe">
+              <div class="option-content">可以寫文字、拍影片或發文，讓想法慢慢被看見。</div>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="q5" value="nexus">
+              <div class="option-content">需要跟很多人聯絡、協調，雖然累但蠻有成就感。</div>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="q5" value="horizon">
+              <div class="option-content">可以偶爾出差、換環境，讓生活不要卡在同一個地方。</div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Q6 -->
+        <div class="question-card" data-q="6">
+          <div class="q-number">Question 06</div>
+          <h3 class="q-text">在課堂上，哪一種「學習方式」比較像你？</h3>
+          <div class="options-grid">
+            <label class="option-item">
+              <input type="radio" name="q6" value="aurora">
+              <div class="option-content">視覺派：課本字太多會想睡，要有圖表、影片或示意圖。</div>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="q6" value="ledger">
+              <div class="option-content">筆記派：喜歡畫重點、做表格，學的東西都要有地方放。</div>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="q6" value="scribe">
+              <div class="option-content">故事派：老師講例子、講故事，我就比較聽得進去。</div>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="q6" value="nexus">
+              <div class="option-content">討論派：跟同學互考、互講，比自己悶著看好很多。</div>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="q6" value="solace">
+              <div class="option-content">節奏派：需要一點休息時間，不喜歡一路衝到爆炸。</div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="question-card" data-q="7">
+          <div class="q-number">Question 07</div>
+          <h3 class="q-text">如果可以下載一個「現代魔法」到腦袋裡，你會選哪一種？</h3>
+          <div class="options-grid">
+            <label class="option-item">
+              <input type="radio" name="q7" value="aurora">
+              <div class="option-content">只要拍照或錄影，畫面自動變得超有質感的濾鏡魔法。</div>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="q7" value="cipher">
+              <div class="option-content">看一眼就懂題目的解法或資料的規則的演算魔法。</div>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="q7" value="scribe">
+              <div class="option-content">可以把腦中的感覺變成剛剛好的文字或台詞的言靈魔法。</div>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="q7" value="nexus">
+              <div class="option-content">只要開口氣氛就變好，大家比較願意合作的連結魔法。</div>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="q7" value="abyss">
+              <div class="option-content">專心魔法：滑完手機之後真的可以馬上收心那種。</div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="question-card" data-q="8">
+          <div class="q-number">Question 08</div>
+          <h3 class="q-text">班上要辦活動，你通常會在哪個位置出現？</h3>
+          <div class="options-grid">
+            <label class="option-item">
+              <input type="radio" name="q8" value="atelier">
+              <div class="option-content">佈置場地、想流程、選音樂，讓整個活動有感覺。</div>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="q8" value="carnival">
+              <div class="option-content">在台上或前排帶氣氛，主持、搞笑、帶動遊戲。</div>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="q8" value="anchor">
+              <div class="option-content">幫忙跑腿、確認時間、顧器材，是穩定活動的那個人。</div>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="q8" value="oracle">
+              <div class="option-content">在旁邊留意各種狀況，有問題時提醒大家避雷。</div>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="q8" value="abyss">
+              <div class="option-content">先觀察一下，確定真的缺人時才會慢慢站出去幫忙。</div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="question-card" data-q="9">
+          <div class="q-number">Question 09</div>
+          <h3 class="q-text">朋友心情很差、跑來找你，你比較常做的是？</h3>
+          <div class="options-grid">
+            <label class="option-item">
+              <input type="radio" name="q9" value="solace">
+              <div class="option-content">先聽完，陪他把情緒講出來，順便幫他整理一下心情。</div>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="q9" value="scribe">
+              <div class="option-content">幫忙換句話說，用比較溫柔或有趣的方式重述他的狀況。</div>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="q9" value="oracle">
+              <div class="option-content">分析事情前因後果，看看有沒有沒注意到的盲點。</div>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="q9" value="nexus">
+              <div class="option-content">拉他去找其他朋友或出去走走，不讓他一個人悶在房間。</div>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="q9" value="anchor">
+              <div class="option-content">幫他查資料、列選項，實際陪他處理一兩件麻煩事。</div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="question-card" data-q="10">
+          <div class="q-number">Question 10</div>
+          <h3 class="q-text">如果要你選一句比較接近現在的自己，你會選哪一句？</h3>
+          <div class="options-grid">
+            <label class="option-item">
+              <input type="radio" name="q10" value="carnival">
+              <div class="option-content">「有好玩的我就會衝，其他的先看心情。」</div>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="q10" value="cipher">
+              <div class="option-content">「如果我真的想懂一件事，就會自己去查到懂。」</div>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="q10" value="horizon">
+              <div class="option-content">「現在先活著，路以後邊走邊找就好。」</div>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="q10" value="abyss">
+              <div class="option-content">「其實我有在想未來，只是還不太想跟大家說。」</div>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="q10" value="aurora">
+              <div class="option-content">「我會先把東西弄好看，再考慮要不要給別人看。」</div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Q11 -->
+        <div class="question-card" data-q="11">
+          <div class="q-number">Question 11</div>
+          <h3 class="q-text">以下哪一種「小廢技能」，你最想點滿？</h3>
+          <div class="options-grid">
+            <label class="option-item">
+              <input type="radio" name="q11" value="aurora">
+              <div class="option-content">幫別人拍照一次就成功，再也不用「再一張」。</div>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="q11" value="ledger">
+              <div class="option-content">永遠不會忘記交作業、帶東西、重要小紙條放哪裡。</div>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="q11" value="carnival">
+              <div class="option-content">講冷笑話大家也會笑，不會空氣凝結那種。</div>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="q11" value="oracle">
+              <div class="option-content">一看就知道「這個感覺有雷」，成功避開麻煩。</div>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="q11" value="anchor">
+              <div class="option-content">可以同時處理很多小事，卻不會忘東忘西爆炸。</div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Q12 -->
+        <div class="question-card" data-q="12">
+          <div class="q-number">Question 12</div>
+          <h3 class="q-text">三年後，如果有人要介紹你給新同學，他說的哪一句你會覺得「好像還不錯」？</h3>
+          <div class="options-grid">
+            <label class="option-item">
+              <input type="radio" name="q12" value="aurora">
+              <div class="option-content">「他是那個作品都很有風格的人。」</div>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="q12" value="ledger">
+              <div class="option-content">「他是那個做事很穩、很可靠的人。」</div>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="q12" value="scribe">
+              <div class="option-content">「他是那個很會表達、很會講故事的人。」</div>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="q12" value="nexus">
+              <div class="option-content">「他是那個朋友很多、跟誰都聊得來的人。」</div>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="q12" value="abyss">
+              <div class="option-content">「他是那個不太吵，但一直默默在前進的人。」</div>
+            </label>
+          </div>
+        </div>
+
+      </form>
+
+      <div style="margin-top: 24px; display: flex; gap: 10px;">
+        <button type="button" class="btn-secondary" id="prevBtn" style="flex: 1; display: none;">上一題</button>
+        <button type="button" class="btn-action" id="nextBtn" style="flex: 2;">下一題</button>
+      </div>
+    </section>
+
+    <div id="resultArea" class="result-frame"></div>
+    
+    <div id="screenshotHint" class="hide-on-shot" style="display:none; text-align:center; margin-top:10px; font-size:0.8rem; color:#fff;">
+      👆 點「截圖分享模式」，再直接手機截圖
+    </div>
+
+    <div class="footer-brand hide-on-shot" id="mainFooter" style="display: none;">
+      <div class="brand-logo">NATIONAL HUALIEN COMMERCIAL HIGH SCHOOL · HLBH</div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">請先選一個啦，別想偷懶！👻</div>
+
+  <script>
+    /* 12 種異世界魔法學派設定 */
+
+    const resultsData = {
+      aurora: {
+        emoji: "🎨",
+        name: "幻光工房系魔法使",
+        tag: "畫面 · 美感 · 故事氛圍",
+        quote: "你擅長把平凡的畫面，調成有自己味道的光。",
+        traits: [
+          "看到不好看的版面會很痛苦，會忍不住想動手重排。",
+          "腦中常常會自動幫場景配背景音樂或構圖。",
+          "作品完成的瞬間，比考高分還更有真實感。"
+        ],
+        mate: { shape: "言靈抄錄系魔法使", emoji: "✒️" },
+        clash: { shape: "記錄方陣系魔法使", emoji: "📊" },
+        tips: "你的幻光魔法在<b>多媒體設計科</b>會被用得很兇，從海報、短影音到品牌視覺都是你的舞台；如果想讓畫面變成生意，<b>商業經營科</b>的行銷和企劃也會讓你的作品走得更遠。"
+      },
+      ledger: {
+        emoji: "📊",
+        name: "記錄方陣系魔法使",
+        tag: "整理 · 結構 · 穩定感",
+        quote: "你看得見別人看不見的「欄位」與「格子」。",
+        traits: [
+          "面對一堆資訊時，會自然想先分類、排序、排時間線。",
+          "比起當主角，你更在意整件事有沒有好好被完成。",
+          "別人忘的事，你常常還記得，而且記得很清楚。"
+        ],
+        mate: { shape: "多工支援系魔法使", emoji: "🧷" },
+        clash: { shape: "即興火花系魔法使", emoji: "🎭" },
+        tips: "你的方陣魔法，很適合在<b>會計事務科</b>練到極致：帳務、數字、規則都需要你的細心；在<b>商業經營科</b>和<b>資料處理科</b>的專案與資料管理中，你也會是讓大家安心的那一個。"
+      },
+      cipher: {
+        emoji: "🧮",
+        name: "演算解析系魔法使",
+        tag: "邏輯 · 系統 · 資料思考",
+        quote: "世界在你眼裡是一張可以慢慢解開的運算陣式。",
+        traits: [
+          "對「為什麼」比「背起來」更有興趣。",
+          "看到數字、表格或程式碼時不會想逃跑，反而會有點好奇。",
+          "喜歡找規則、測試假設，哪怕只是遊戲機制或演算法。"
+        ],
+        mate: { shape: "觀測占察系魔法使", emoji: "👁‍🗨" },
+        clash: { shape: "即興火花系魔法使", emoji: "🎭" },
+        tips: "你的演算魔法在<b>資料處理科</b>與<b>資料處理科 AI 實驗班</b>會被看得很重，用程式和資料解決問題是你的主場；在<b>會計事務科</b>裡，這種邏輯感也會讓你在數字世界走得更穩。"
+      },
+      scribe: {
+        emoji: "✒️",
+        name: "言靈抄錄系魔法使",
+        tag: "文字 · 語氣 · 敘事感",
+        quote: "你擅長用句子，把別人的世界慢慢抄錄下來。",
+        traits: [
+          "很在意訊息、貼文或簡報的用詞，會一直改到順眼為止。",
+          "別人講了一堆，你可以幫他整理成幾句重點。",
+          "有時候說不出口的東西，你比較想用打字寫出來。"
+        ],
+        mate: { shape: "幻光工房系魔法使", emoji: "🎨" },
+        clash: { shape: "即興火花系魔法使", emoji: "🎭" },
+        tips: "你的言靈魔法在<b>應用英語科</b>和<b>應用日語科</b>會長出更多語言，未來可以把故事說給不同地方的人聽；在<b>商業經營科</b>、<b>國際貿易科</b>裡，簡報、提案與社群文案也會非常需要你。"
+      },
+      nexus: {
+        emoji: "🌐",
+        name: "星環連結系魔法使",
+        tag: "人際 · 橋樑 · 協調",
+        quote: "你是把散開的星星串成星座的那雙手。",
+        traits: [
+          "你不一定最吵，但常是大家覺得「很好相處」的那一個。",
+          "很自然會幫不同圈子的人牽起來，一起做點什麼。",
+          "遇到衝突時，你會想辦法先讓氣氛不要炸掉。"
+        ],
+        mate: { shape: "即興火花系魔法使", emoji: "🎭" },
+        clash: { shape: "靜默深潛系魔法使", emoji: "🌊" },
+        tips: "你的連結魔法在<b>商業經營科</b>和<b>國際貿易科</b>特別吃香，這些領域需要願意跟人對話、談合作的人；搭配<b>應用英語科</b>或<b>應用日語科</b>，你會有能力把連結拉到國外去。"
+      },
+      carnival: {
+        emoji: "🎭",
+        name: "即興火花系魔法使",
+        tag: "氣氛 · 表演 · 當下感",
+        quote: "你會在平常的一天裡，突然點燃一小段嘉年華。",
+        traits: [
+          "看到鏡頭不一定會怕，反而會下意識多做一點效果。",
+          "對好笑的梗、節奏、反應很敏感，會想自己改編看看。",
+          "讀書動機有時候不穩，但活動一來你通常動得很快。"
+        ],
+        mate: { shape: "星環連結系魔法使", emoji: "🌐" },
+        clash: { shape: "記錄方陣系魔法使", emoji: "📊" },
+        tips: "你的火花魔法在<b>多媒體設計科</b>可以變成影片、動畫或短影音，也可以在<b>商業經營科</b>的活動企劃、現場主持中被好好使用。未來不一定要當「網紅」，但很適合當讓場子亮起來的那個人。"
+      },
+      solace: {
+        emoji: "💗",
+        name: "心域治癒系魔法使",
+        tag: "共感 · 安心 · 陪伴",
+        quote: "你不是世界上最吵的聲音，但常是讓人安心的那一個。",
+        traits: [
+          "朋友心情不好時，你會下意識放慢語速陪他說完。",
+          "你很怕自己講錯話傷人，因此會多想一下再開口。",
+          "有時候也會被情緒拖累，但還是想當那個溫柔的人。"
+        ],
+        mate: { shape: "觀測占察系魔法使", emoji: "👁‍🗨" },
+        clash: { shape: "即興火花系魔法使", emoji: "🎭" },
+        tips: "你的治癒魔法，在<b>商業經營科</b>、<b>國際貿易科</b>的服務情境裡非常重要，能讓客人和同事都比較放心；搭配<b>應用英語科</b>或<b>應用日語科</b>，未來也很適合走接待、觀光或跨文化溝通相關的路。"
+      },
+      horizon: {
+        emoji: "🧭",
+        name: "邊境探索系魔法使",
+        tag: "好奇 · 變動 · 開視野",
+        quote: "你不急著把自己關進一個小盒子，因為世界還很大。",
+        traits: [
+          "對別的城市、學校或國家的生活總是有點好奇。",
+          "很怕被鎖死在「只有一種可能」的人生裡。",
+          "會存一些資訊起來，但不會急著下定論。"
+        ],
+        mate: { shape: "幻光工房系魔法使", emoji: "🎨" },
+        clash: { shape: "記錄方陣系魔法使", emoji: "📊" },
+        tips: "你的探索魔法在<b>國際貿易科</b>、<b>應用英語科</b>與<b>應用日語科</b>會被放大，它們都跟不同的國家、文化與市場有關；在花商，你可以先把眼前的技能練好，再慢慢把邊界拉遠。"
+      },
+      atelier: {
+        emoji: "🏟",
+        name: "場域塑形系魔法使",
+        tag: "體驗 · 氛圍 · 儀式感",
+        quote: "在你手上，空間和活動會悄悄變成一個完整的故事。",
+        traits: [
+          "很在意活動或聚會的流程和細節，希望大家有參與感。",
+          "喜歡布置、挑音樂、取主題，讓普通的一天變得特別一點。",
+          "腦中常常在想：「如果把這裡改成那樣，應該會更好玩。」"
+        ],
+        mate: { shape: "即興火花系魔法使", emoji: "🎭" },
+        clash: { shape: "靜默深潛系魔法使", emoji: "🌊" },
+        tips: "你的場域魔法在<b>商業經營科</b>很有用，無論是品牌活動、展售會或體驗設計都需要這種敏感度；搭配<b>多媒體設計科</b>，你可以把體驗延伸到畫面與互動設計上。"
+      },
+      oracle: {
+        emoji: "👁‍🗨",
+        name: "觀測占察系魔法使",
+        tag: "觀察 · 判讀 · 避雷",
+        quote: "你善於閱讀「沒說出口」的部分，替自己和別人避掉一些坑。",
+        traits: [
+          "常常會先看氣氛、看表情，再決定要講什麼、做什麼。",
+          "對人際關係和場景變化很敏感，哪裡怪怪的你會先發現。",
+          "做決定前會先在腦中模擬幾種「如果這樣會怎樣」。"
+        ],
+        mate: { shape: "心域治癒系魔法使", emoji: "💗" },
+        clash: { shape: "即興火花系魔法使", emoji: "🎭" },
+        tips: "你的觀測魔法，很適合用在<b>資料處理科</b>與<b>資料處理科 AI 實驗班</b>的資料洞察上，也適合放進<b>商業經營科</b>和<b>國際貿易科</b>的市場觀察和風險評估裡。你不一定要很吵，但很關鍵。"
+      },
+      anchor: {
+        emoji: "🧷",
+        name: "多工支援系魔法使",
+        tag: "補位 · 後勤 · 穩定",
+        quote: "你是那個看起來很普通，但少了你事情就開始卡住的人。",
+        traits: [
+          "很擅長處理零碎的小事，整理檔案、排時間、確認細節。",
+          "比起站在台上，你更習慣待在讓整件事「動得起來」的位置。",
+          "別人常常一句「拜託你一下」，你就默默幫忙收好爛攤子。"
+        ],
+        mate: { shape: "記錄方陣系魔法使", emoji: "📊" },
+        clash: { shape: "即興火花系魔法使", emoji: "🎭" },
+        tips: "你的支援魔法在<b>會計事務科</b>與<b>資料處理科</b>非常實用，讓系統、帳務與資料不會亂掉；在<b>商業經營科</b>裡，你也會是專案和行政流程背後非常重要的核心。"
+      },
+      abyss: {
+        emoji: "🌊",
+        name: "靜默深潛系魔法使",
+        tag: "安靜 · 深度 · 慢熟",
+        quote: "你可能話不多，但一旦想做，就會慢慢往深處潛下去。",
+        traits: [
+          "不太喜歡被催促，比起表現得很厲害，更想穩穩來。",
+          "對有興趣的東西可以一直重複做，不太怕覺得無聊。",
+          "有些計畫你放在心裡想，還沒準備好時不太會講出來。"
+        ],
+        mate: { shape: "演算解析系魔法使", emoji: "🧮" },
+        clash: { shape: "星環連結系魔法使", emoji: "🌐" },
+        tips: "你的深潛魔法很適合需要長期打磨的領域，例如<b>會計事務科</b>、<b>資料處理科／AI 實驗班</b>；在花商，你可以慢慢累積，一點一滴疊出自己的專業，不用跟別人的時間表完全一樣。"
+      }
+    };
+
+    const state = {
+      step: 0,
+      answers: {},
+      total: 12
+    };
+
+    const els = {
+      hero: document.getElementById('heroCard'),
+      quiz: document.getElementById('quizCard'),
+      result: document.getElementById('resultArea'),
+      startBtn: document.getElementById('startBtn'),
+      prevBtn: document.getElementById('prevBtn'),
+      nextBtn: document.getElementById('nextBtn'),
+      questions: document.querySelectorAll('.question-card'),
+      stepText: document.getElementById('stepText'),
+      progressFill: document.getElementById('progressFill'),
+      toast: document.getElementById('toast'),
+      footer: document.getElementById('mainFooter'),
+      screenshotHint: document.getElementById('screenshotHint')
+    };
+
+    const showToast = (msg) => {
+      els.toast.textContent = msg;
+      els.toast.classList.add('show');
+      setTimeout(() => els.toast.classList.remove('show'), 2000);
+    };
+
+    const updateUI = () => {
+      els.questions.forEach((q, idx) => {
+        if (idx === state.step) q.classList.add('active');
+        else q.classList.remove('active');
+      });
+
+      const progress = ((state.step + 1) / state.total) * 100;
+      els.progressFill.style.width = `${progress}%`;
+      els.stepText.textContent = `${state.step + 1} / ${state.total}`;
+
+      els.prevBtn.style.display = state.step === 0 ? 'none' : 'block';
+      els.nextBtn.innerHTML = state.step === state.total - 1 ? '看結果 🔮' : '下一題';
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    const calculateResult = () => {
+      const scores = {
+        aurora: 0, ledger: 0, cipher: 0, scribe: 0,
+        nexus: 0, carnival: 0, solace: 0, horizon: 0,
+        atelier: 0, oracle: 0, anchor: 0, abyss: 0
+      };
+
+      Object.values(state.answers).forEach(val => {
+        if (scores[val] !== undefined) scores[val]++;
+      });
+
+      let max = -1;
+      let winner = 'abyss';
+      Object.entries(scores).forEach(([key, score]) => {
+        if (score > max) {
+          max = score;
+          winner = key;
+        }
+      });
+
+      renderResult(winner);
+    };
+
+    const renderResult = (key) => {
+      const data = resultsData[key];
+      const html = `
+        <div class="result-header">
+          <div class="res-emoji">${data.emoji}</div>
+          <h2 class="res-title">${data.name}</h2>
+          <span class="res-tag">${data.tag}</span>
+        </div>
+        <div class="result-body">
+          <p class="res-quote">${data.quote}</p>
+          
+          <div class="trait-box">
+            <div class="trait-title">YOUR MAGIC TRAITS</div>
+            <ul class="trait-list">
+              ${data.traits.map(t => `<li>${t}</li>`).join('')}
+            </ul>
+          </div>
+
+          <div class="relation-grid">
+            <div class="relation-card good">
+              <span class="rel-icon">😍</span>
+              <span class="rel-label">最合拍</span>
+              <div class="rel-name">${data.mate.emoji} ${data.mate.shape}</div>
+            </div>
+            <div class="relation-card bad">
+              <span class="rel-icon">🤯</span>
+              <span class="rel-label">容易磨合出火花</span>
+              <div class="rel-name">${data.clash.emoji} ${data.clash.shape}</div>
+            </div>
+          </div>
+
+          <div class="school-tips">
+            <div class="tips-title">💡 在花商，這種魔法可以怎麼練？</div>
+            <div class="tips-text">${data.tips}</div>
+          </div>
+
+          <div class="result-actions hide-on-shot">
+            <button onclick="toggleScreenshotMode()" class="btn-secondary" style="background:#fff; border-color:var(--dark);">
+              ✨ 截圖分享模式
+            </button>
+
+            <div style="text-align:center; font-size:0.8rem; color:#64748b; margin:10px 0 5px;">
+              想再看看現實世界的說明書？
+            </div>
+
+            <div class="link-group">
+              <a href="https://www.hlbh.hlc.edu.tw/ischool/publish_page/0/" target="_blank" class="btn-link">
+                🏫 花蓮高商官網
+              </a>
+              <a href="https://www.facebook.com/hlbhtw" target="_blank" class="btn-link fb">
+                👍 花商粉專
+              </a>
+            </div>
+
+            <button onclick="location.reload()" class="btn-secondary" style="margin-top:10px; border:none; color:#64748b; font-size:0.85rem;">
+              ↻ 想換一個魔法系再試一次
+            </button>
+          </div>
+        </div>
+      `;
+
+      els.quiz.style.display = 'none';
+      els.result.innerHTML = html;
+      els.result.style.display = 'block';
+      els.result.style.animation = 'fadeIn 0.6s ease-out';
+
+      els.hero.style.display = 'none';
+      els.footer.style.display = 'block';
+      els.screenshotHint.style.display = 'block';
+    };
+
+    window.toggleScreenshotMode = () => {
+      document.body.classList.toggle('screenshot-mode');
+      if (document.body.classList.contains('screenshot-mode')) {
+        showToast('已隱藏按鈕，現在可以直接截圖囉 📸');
+        document.addEventListener('click', exitScreenshotMode);
+      }
+    };
+
+    const exitScreenshotMode = (e) => {
+      if (e.target.innerText && e.target.innerText.includes('截圖')) return;
+      document.body.classList.remove('screenshot-mode');
+      document.removeEventListener('click', exitScreenshotMode);
+    };
+
+    els.startBtn.addEventListener('click', () => {
+      els.hero.style.display = 'none';
+      els.quiz.style.display = 'block';
+      updateUI();
+    });
+
+    els.nextBtn.addEventListener('click', () => {
+      const currentQ = document.querySelector(`.question-card[data-q="${state.step+1}"]`);
+      const checked = currentQ.querySelector('input:checked');
+
+      if (!checked) {
+        showToast('選一個啦，別想偷懶！👻');
+        return;
+      }
+
+      state.answers[`q${state.step+1}`] = checked.value;
+
+      if (state.step < state.total - 1) {
+        state.step++;
+        updateUI();
+      } else {
+        calculateResult();
+      }
+    });
+
+    els.prevBtn.addEventListener('click', () => {
+      if (state.step > 0) {
+        state.step--;
+        updateUI();
+      }
+    });
+  </script>
+</body>
+</html>
